@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, request
+from app.controllers.aluno_controller import aluno_bp
 
 dici = {
     "alunos": [
@@ -117,6 +118,7 @@ dici = {
 }
 
 app = Flask(__name__)
+app.register_blueprint(aluno_bp, url_prefix="/api")
 
 # -------------------- ALUNOS --------------------
 
